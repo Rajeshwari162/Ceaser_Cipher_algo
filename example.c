@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 
 int main() {
@@ -13,4 +12,4 @@ int main() {
 
     return 0;
 }
->>>>>>> d4e6ba8 (Added even odd program)
+
