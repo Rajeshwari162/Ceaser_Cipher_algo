@@ -1,53 +1,34 @@
-import java.util.Scanner;
-
 public class CaesarCipher {
 
-    // Method to encrypt text
     public static String encrypt(String text, int shift) {
-        String result = "";
+        if (shift < 0) {
+            throw new IllegalArgumentException("Shift cannot be negative");
+        }
+
+        StringBuilder result = new StringBuilder();
 
         for (int i = 0; i < text.length(); i++) {
             char ch = text.charAt(i);
 
-            // For uppercase letters
-            if (ch >= 'A' && ch <= 'Z') {
+            if (Character.isUpperCase(ch)) {
                 char encrypted = (char) ((ch - 'A' + shift) % 26 + 'A');
-                result += encrypted;
-            }
-            // For lowercase letters
-            else if (ch >= 'a' && ch <= 'z') {
+                result.append(encrypted);
+            } else if (Character.isLowerCase(ch)) {
                 char encrypted = (char) ((ch - 'a' + shift) % 26 + 'a');
-                result += encrypted;
-            }
-            // For other characters (space, symbols)
-            else {
-                result += ch;
+                result.append(encrypted);
+            } else {
+                result.append(ch);
             }
         }
 
-        return result;
+        return result.toString();
     }
 
-    // Method to decrypt text
     public static String decrypt(String text, int shift) {
-        return encrypt(text, 26 - shift); // reverse shift
-    }
+        if (shift < 0) {
+            throw new IllegalArgumentException("Shift cannot be negative");
+        }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter text: ");
-        String text = sc.nextLine();
-
-        System.out.print("Enter shift value: ");
-        int shift = sc.nextInt();
-
-        String encrypted = encrypt(text, shift);
-        String decrypted = decrypt(encrypted, shift);
-
-        System.out.println("Encrypted Text: " + encrypted);
-        System.out.println("Decrypted Text: " + decrypted);
-
-        sc.close();
+        return encrypt(text, 26 - (shift % 26));
     }
 }
