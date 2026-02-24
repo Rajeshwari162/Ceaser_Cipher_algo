@@ -1,7 +1,22 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+
 public class PlayfairTest {
+
+    // setUp
+    @BeforeEach
+    void setUp() {
+        System.out.println("Test Started...");
+    }
+
+    // tearDown
+    @AfterEach
+    void tearDown() {
+        System.out.println("Test Finished...");
+    }
 
     @Test
     void testEncryptionBasic() {
