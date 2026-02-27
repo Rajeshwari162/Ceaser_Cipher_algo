@@ -1,4 +1,3 @@
-package Ceaser_Cipher_algo;
 public class RailFenceCipher {
 
     public String encrypt(String text, int key) {

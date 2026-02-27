@@ -1,4 +1,3 @@
-package Ceaser_Cipher_algo;
 import java.util.*;
 
 public class Playfair {
