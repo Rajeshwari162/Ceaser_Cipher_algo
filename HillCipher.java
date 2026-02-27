@@ -1,3 +1,5 @@
+package Ceaser_Cipher_algo;
+
 public class HillCipher {
 
     // Multiply matrix
