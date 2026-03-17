@@ -4,13 +4,13 @@ import org.junit.jupiter.api.Test;
 
 public class HillCipherTest {
 
-    // ✅ Valid key matrix
+    // Valid key matrix
     int[][] validKey = {
         {3, 3},
         {2, 5}
     };
 
-    // ❌ Invalid key matrix (determinant not invertible mod 26)
+    // Invalid key matrix (determinant not invertible mod 26)
     int[][] invalidKey = {
         {2, 4},
         {2, 4}
